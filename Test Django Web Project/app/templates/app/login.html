@@ -1,0 +1,60 @@
+{% extends "app/layout.html" %}
+
+{% block pagecontent %}
+
+<div class="container-xl">
+
+        <div class="col-lg-12">
+            <h1 class="main-heading"> {{title}} </h1>
+        </div>
+
+    <section id="loginForm">
+        <form action="." method="post" class="form-horizontal">
+
+            {% csrf_token %}
+
+            <div class="col-xs-8" style="padding-top:20px">
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label for="id_username">Username <span class="info">(or email)</span> <span class="tooltip-info" data-toggle="tooltip" title="Your username will be displayed on all orders, communication, and reciepts - so choose wisely!"></span></label>
+                                {#<input type="text" id="exampleTextInput1" class="form-control" placeholder="Enter your username" maxlength="60" />#}
+                                {{ form.username }}
+                                <p class="help-block">Maximum of 60 characters</p>
+                        </div>
+                    </div>
+                
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label for="id_password">Password <span class="tooltip-info" data-toggle="tooltip" title="Your 10 digit account number was assigned to you when you created your account."></span></label>
+                                {#<input type="text" id="exampleTextInput2" class="form-control" placeholder="0123456789" />#}
+                                {{ form.password }}
+                                {#<p class="help-block">Enter your 10 digit number</p>#}
+                        </div>
+                    </div>
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <input type="hidden" name="next" value="/" />
+                        <input type="submit" value="Log in" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+
+                {% if form.errors %}
+                    <p class="validation-summary-errors">Please enter a correct user name and password.</p>
+                {% endif %}
+
+            </form>
+        </section>
+    </div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+
+    {% load staticfiles %}
+<script src="{% static 'app/scripts/jquery.validate.min.js' %}"></script>
+
+{% endblock %}
+
