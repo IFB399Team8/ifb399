@@ -1,0 +1,40 @@
+.btn-area-container{
+  background: #455565;
+  display: block;
+  padding: 0px 0px;
+}
+
+
+.btn-area{
+  padding: 0px 0;
+}
+
+.btn-area .add{
+  margin: 0px 0px;
+  display: inline-block;
+  float: left;
+  width: 10%;
+
+}
+
+.background{
+
+  background: #455565;
+  height: 250px;
+}
+
+.center{
+
+}
+.mw2-l{
+  width: 50%;
+}
+.fl{
+  float: left;
+}
+.chart-area{
+  width:100%;
+}
+/* .btn-one{
+  float: left;
+} */
